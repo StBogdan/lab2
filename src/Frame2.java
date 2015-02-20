@@ -1,4 +1,4 @@
-import javax.swing.*;
+/*import javax.swing.*;
 
 import java.awt.*;
 
@@ -35,16 +35,16 @@ class Frame1 extends JFrame{
 		/*JRadioButton font1 = new JRadioButton("Time");
 		JRadioButton font2 = new JRadioButton("Helvetica");
 		JRadioButton font3 = new JRadioButton("Courier");*/
-		JComboBox fontBox = new JComboBox();
+		/*JComboBox fontBox = new JComboBox();
 		fontBox.setModel(new DefaultComboBoxModel());
-		fontBox.setEnabled(true);
+		fontBox.setEnabled(true);*/
 		
 		/*ButtonGroup fonts = new ButtonGroup();
 		fonts.add(font1);
 		fonts.add(font2);
 		fonts.add(font3);*/
 		
-		fontBox.addItem("Time");
+		/*fontBox.addItem("Time");
 		fontBox.addItem("Helvetica");
 		fontBox.addItem("Courier");
 		fontBox.addItem("Times New Roman");
@@ -71,4 +71,4 @@ class Frame1 extends JFrame{
 		
 	}
 
-}
+}*/
