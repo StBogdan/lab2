@@ -52,28 +52,27 @@ class FontChooser extends JFrame{
 		
 		//Grid2
 		
+		//Create a drop-down list for fonts
 		fontBox.setModel(new DefaultComboBoxModel());
 		fontBox.setEnabled(true);
 			//Get all the fonts 
 		GraphicsEnvironment e = GraphicsEnvironment.getLocalGraphicsEnvironment();
 		String[] fontNames = e.getAvailableFontFamilyNames();
+		
 		final HashMap <String,Font> fontMap = new HashMap<String,Font>();
 		for(String font : fontNames) 
 			{fontBox.addItem(font);
-			 for ( Font searchFont : e.getAllFonts()) if (searchFont.getFontName().equals(font)) fontMap.put(font, searchFont);
-			}
+			 for ( Font searchFont : e.getAllFonts()) if (searchFont.getFontName().equals(font)) fontMap.put(font, searchFont);}
 		
-		System.out.println( Font.getFont("Andalus" ,new Font(Font.MONOSPACED, Font.PLAIN, 12)));
-		System.out.println(input.getFont());
-		
+		//Add a listener for user font choice
 		fontBox.addItemListener(new ItemListener(){
 											public void itemStateChanged(ItemEvent e) {
 												if(e.getStateChange() == ItemEvent.SELECTED ){
 													input.setFont(fontMap.get(fontBox.getSelectedItem()));
-													input.setFont(input.getFont().deriveFont(18.0f));
+													input.setFont(input.getFont().deriveFont(16.0f));
 												}
-				
-			}});
+											}
+		});
 		grid2.setLayout(new FlowLayout());
 		grid2.add(fontBox);
 		gridContainer.add(grid2);
