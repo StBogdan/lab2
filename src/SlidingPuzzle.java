@@ -13,7 +13,7 @@ public class SlidingPuzzle extends JFrame {
 	
 	//Starts the puzzle
 	public static void main (String argsp[]){
-		SlidingPuzzle mySpeed = new SlidingPuzzle(4,2);
+		SlidingPuzzle mySpeed = new SlidingPuzzle(3,3);
 		mySpeed.init();
 	}
 	
