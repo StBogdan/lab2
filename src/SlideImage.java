@@ -1,7 +1,7 @@
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 
-
+//Represents a piece of a Slide Puzzle
 public class SlideImage extends JLabel{
 	int row;
 	int column;
@@ -16,6 +16,8 @@ public class SlideImage extends JLabel{
 		return this.getIcon().getIconWidth() == -1 ;
 	}
 	
+	//These probably overload methods from JLabel
+	//Are really,really useful 
 	public int getX() { return row;}
 	public int getY() { return column;}
 	

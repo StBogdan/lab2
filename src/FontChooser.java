@@ -41,6 +41,8 @@ class FontChooser extends JFrame{
 		//Listener for style changes
 		ItemListener styleDetect = new ItemListener(){
 											public void itemStateChanged(ItemEvent e) {
+												//Since the style seems to be a integer , fontState increases if a specific attribute is needed
+												//Default (plain) is 0
 												int fontState =0;
 												if(beItalic.isSelected()) fontState += Font.ITALIC;
 												if(beBold.isSelected()) fontState += Font.BOLD;
@@ -51,7 +53,6 @@ class FontChooser extends JFrame{
 		beItalic.addItemListener(styleDetect);
 		
 		//Grid2
-		
 		//Create a drop-down list for fonts
 		fontBox.setModel(new DefaultComboBoxModel());
 		fontBox.setEnabled(true);
@@ -59,6 +60,7 @@ class FontChooser extends JFrame{
 		GraphicsEnvironment e = GraphicsEnvironment.getLocalGraphicsEnvironment();
 		String[] fontNames = e.getAvailableFontFamilyNames();
 		
+			//Does not work : Font.getFont(String nm)
 		final HashMap <String,Font> fontMap = new HashMap<String,Font>();
 		for(String font : fontNames) 
 			{fontBox.addItem(font);
@@ -73,16 +75,15 @@ class FontChooser extends JFrame{
 												}
 											}
 		});
+		
+		//Sets layout ,adds to the window
 		grid2.setLayout(new FlowLayout());
 		grid2.add(fontBox);
 		gridContainer.add(grid2);
-		
 		panel2.add(gridContainer);
 		
 		//Rest of elements
 		//Added to the flowLayout
-		
-		
 		panel2.add(input);
 		panel2.add(ok);
 		
