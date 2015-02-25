@@ -70,8 +70,10 @@ class FontChooser extends JFrame{
 		fontBox.addItemListener(new ItemListener(){
 											public void itemStateChanged(ItemEvent e) {
 												if(e.getStateChange() == ItemEvent.SELECTED ){
+													int style = input.getFont().getStyle();
 													input.setFont(fontMap.get(fontBox.getSelectedItem()));
 													input.setFont(input.getFont().deriveFont(16.0f));
+													input.setFont(input.getFont().deriveFont(style));
 												}
 											}
 		});

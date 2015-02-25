@@ -41,7 +41,7 @@ public class SlidingPuzzle extends JFrame {
 					}
 		
 		//Put the images at random
-		randomise();
+		//randomise();
 		//Displays the images 
 		update();
 		

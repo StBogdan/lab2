@@ -6,8 +6,8 @@ import java.awt.event.ActionListener;
 
 
 @SuppressWarnings("serial")
-class ClickCounter extends JFrame implements ActionListener{
-	Integer count=0 ;
+class ClickCounter extends JFrame {
+	
 	JTextField clicks;
 	JButton increment;
 	JButton reset;
@@ -30,8 +30,9 @@ class ClickCounter extends JFrame implements ActionListener{
 		panel.add(reset);
 		panel.add(clicks);
 		
-		increment.addActionListener(this);
-		reset.addActionListener(this);
+		myAL newAl = new myAL();
+		increment.addActionListener(newAl);
+		reset.addActionListener(newAl);
 		
 		//Setup the window
 		window1.setVisible(true);
@@ -40,10 +41,15 @@ class ClickCounter extends JFrame implements ActionListener{
 		
 	}
 		
-	public void actionPerformed(ActionEvent e)
+	
+	public class myAL implements ActionListener{
+		Integer count=0 ;
+		public void actionPerformed(ActionEvent e)
 		{
 		//If increment is pressed , increase the number of clicks
 		if (e.getSource().equals(increment)) count+=1;
 		else count=0;
 		clicks.setText(count.toString());}
+		}
 }
+
